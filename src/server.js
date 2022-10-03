@@ -1,5 +1,6 @@
 import express from 'express'
 import initWebRoutes from './route/web'
+import connectDB from './config/connectDB'
 require('dotenv').config()
 
 const app = express()
@@ -12,7 +13,12 @@ app.use(express.json())
 app.use(express.static('./src/public'))
 app.set('view engine', 'ejs')
 app.set('views', './src/resources/views')
+
+//route
 initWebRoutes(app)
+
+//connect DB
+connectDB()
 
 const port = process.env.PORT || 6969
 app.listen(port, () => console.log('app is running on port: ', port)) 
