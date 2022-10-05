@@ -4,6 +4,9 @@ const router = express.Router()
 
 const initWebRoutes = (app) => {
     router.get('/', HomeController.home)
+    router.get('/crud', HomeController.crud)
+    router.post('/post-crud', HomeController.postCrud)
+    router.get('/get-crud', HomeController.getCrud)
     return app.use('/', router)
 }
 

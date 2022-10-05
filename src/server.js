@@ -1,5 +1,5 @@
 import express from 'express'
-import initWebRoutes from './route/web'
+import initWebRoutes from './routes/web'
 import connectDB from './config/connectDB'
 require('dotenv').config()
 
