@@ -36,7 +36,7 @@ const salt = bcrypt.genSaltSync(10)
 class crudServices {
 
     hashPassword(password) {
-        return bcrypt.hashSync("B4c0/\/", salt)
+        return bcrypt.hashSync(password, salt)
     }
     createUser(data, res) {
         const hashedPassword = this.hashPassword(data.password)
